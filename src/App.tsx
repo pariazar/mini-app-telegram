@@ -8,6 +8,13 @@ import Mine from './icons/Mine';
 import Friends from './icons/Friends';
 import Coins from './icons/Coins';
 
+import legendaryImage from './images/legendary.png';
+import masterImage from './images/master.png';
+import grandMasterImage from './images/grandmaster.png';
+import lordImage from './images/lord.png';
+
+
+
 const App: React.FC = () => {
   const levelNames = [
     "Bronze",    // From 0 to 4999 coins
@@ -21,6 +28,20 @@ const App: React.FC = () => {
     "GrandMaster", // From 100,000,000 coins to 1,000,000,000 coins
     "Lord"       // From 1,000,000,000 coins to ∞
   ];
+
+
+  const levelImages: any = {
+    bronze: legendaryImage,
+    silver: legendaryImage,
+    gold: legendaryImage,
+    platinum: legendaryImage,
+    diamond: legendaryImage,
+    epic: legendaryImage,
+    legendary: legendaryImage,
+    master: masterImage,
+    grandmaster: grandMasterImage,
+    lord: lordImage,
+  };
 
   const levelMinPoints = [
     0,        // Bronze
@@ -210,7 +231,7 @@ const App: React.FC = () => {
               >
                 <div className="w-full h-full rounded-full circle-inner">
 
-                  <img src={`src/images/${levelNames[levelIndex].toLocaleLowerCase()}.png`} alt="Main Character" className="w-full h-full" />
+                  <img src={levelImages[levelNames[levelIndex].toLowerCase()]} alt="Main Character" className="w-full h-full" />
                 </div>
               </div>
             </div>
